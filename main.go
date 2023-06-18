@@ -29,6 +29,7 @@ func main() {
 		return
 	}
 
+	fmt.Println(owner, repo)
 	fmt.Println(os.Getenv("GITHUB_TOKEN"), owner, repo, prNumber)
 
 	comment := &github.IssueComment{
