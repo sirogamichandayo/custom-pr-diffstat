@@ -22,7 +22,7 @@ func main() {
 
 	// The following parameters should be set:
 	owner := "owner-of-the-repo"
-	repo := "repo-name"
+	repo := "custom-pr-diffstat"
 	splinted := strings.Split(os.Getenv("GITHUB_REF"), "/") // refs/pull/8/head or refs/heads/branch/branch/name
 	prNumber, err := strconv.Atoi(splinted[2])
 	if err != nil {
