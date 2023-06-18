@@ -32,11 +32,11 @@ func main() {
 
 	fmt.Println(os.Getenv("GITHUB_TOKEN"), owner, repo, prNumber)
 
-	comment := &github.PullRequestComment{
+	comment := &github.IssueComment{
 		Body: github.String("This is a comment from Go code."),
 	}
 
-	_, _, err = client.PullRequests.CreateComment(ctx, owner, repo, prNumber, comment)
+	_, _, err = client.Issues.CreateComment(ctx, owner, repo, prNumber, comment)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
