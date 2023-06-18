@@ -1,0 +1,14 @@
+name: Test My Action
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run my action
+        uses: ./  # Assumes your action is in the root of the repo
+        with:
+          myInput: 'Hello, world!'
