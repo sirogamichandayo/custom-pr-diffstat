@@ -30,6 +30,8 @@ func main() {
 		return
 	}
 
+	fmt.Println(os.Getenv("GITHUB_TOKEN"), owner, repo, prNumber)
+
 	comment := &github.PullRequestComment{
 		Body: github.String("This is a comment from Go code."),
 	}
