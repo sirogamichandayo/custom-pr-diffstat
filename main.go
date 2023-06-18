@@ -20,16 +20,16 @@ func main() {
 
 	client := github.NewClient(tc)
 
-	owner := os.Getenv("GITHUB_OWNER")
-	repo := os.Getenv("GITHUB_REPOSITORY")
-	splinted := strings.Split(os.Getenv("GITHUB_REF"), "/")
+	// The following parameters should be set:
+	owner := "sirogamichandayo"
+	repo := "custom-pr-diffstat"
+	splinted := strings.Split(os.Getenv("GITHUB_REF"), "/") // refs/pull/8/head or refs/heads/branch/branch/name
 	prNumber, err := strconv.Atoi(splinted[2])
 	if err != nil {
 		fmt.Printf("Error parsing PR number: %v\n", err)
 		return
 	}
 
-	fmt.Println(owner, repo)
 	fmt.Println(os.Getenv("GITHUB_TOKEN"), owner, repo, prNumber)
 
 	comment := &github.IssueComment{
